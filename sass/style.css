@@ -1,1 +1,138 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.sky {
+  position: relative;
+  height: 60vh;
+  background-color: #1294eb;
+}
+
+.sun {
+  position: absolute;
+  bottom: 15px;
+  left: 90px;
+  width: 70px;
+  height: 70px;
+  background-color: #e2de0c;
+  box-shadow: 0 0 12px yellow;
+  border-radius: 50%;
+}
+
+.ground {
+  position: relative;
+  height: 40vh;
+  background-color: #38250f;
+}
+
+.grass {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  background-color: #307a06;
+}
+
+.road {
+  position: absolute;
+  height: 140px;
+  width: 100%;
+  top: 15px;
+  background-color: #837d7d;
+}
+
+.car-first {
+  position: absolute;
+  width: 100px;
+  height: 65px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  top: -7px;
+  left: 50px;
+  background-color: #ca2020;
+}
+
+.car-second {
+  position: absolute;
+  width: 100px;
+  height: 65px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: #f7f2f254;
+  right: 195px;
+  bottom: 20px;
+}
+
+.car-first::before, .car-first::after, .car-second::before, .car-second::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 30px;
+  height: 35px;
+}
+
+.car-first::before {
+  left: -30px;
+  background-color: #ca2020;
+  border-top-left-radius: 10px;
+}
+
+.car-first::after {
+  right: -30px;
+  background-color: #ca2020;
+  border-top-right-radius: 10px;
+}
+
+.car-second::before {
+  left: -30px;
+  background-color: #f7f2f254;
+  border-top-left-radius: 10px;
+}
+
+.car-second::after {
+  right: -30px;
+  background-color: #f7f2f254;
+  border-top-right-radius: 10px;
+}
+
+.front-wheel {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  bottom: -12px;
+  background-color: black;
+  border: 4px dotted #747272;
+  border-radius: 50%;
+}
+
+.rear-wheel {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  bottom: -12px;
+  background-color: black;
+  border: 4px dotted #747272;
+  border-radius: 50%;
+  right: 0;
+}
+
+.front-window {
+  position: absolute;
+  width: 40px;
+  height: 24px;
+  top: 5px;
+  background-color: royalblue;
+  border-top-left-radius: 15px;
+}
+
+.rear-window {
+  position: absolute;
+  width: 40px;
+  height: 24px;
+  top: 5px;
+  background-color: royalblue;
+  right: 0;
+  border-top-right-radius: 15px;
+}
+/*# sourceMappingURL=style.css.map */

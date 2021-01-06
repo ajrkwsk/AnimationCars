@@ -1,0 +1,123 @@
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+@mixin car
+    position: absolute
+    width: 100px
+    height: 65px
+    border-top-left-radius: 25px
+    border-top-right-radius: 25px
+
+@mixin wheel
+    position: absolute
+    height: 30px
+    width: 30px
+    bottom: -12px
+    background-color: black
+    border: 4px dotted #747272
+    border-radius: 50%
+
+@mixin window
+    position: absolute
+    width: 40px
+    height: 24px
+    top: 5px
+    background-color: #92c9c9
+
+.sky 
+    position: relative
+    height: 60vh
+    background-color: #1294eb
+
+.sun
+    position: absolute
+    bottom: 15px
+    left: 90px
+    width: 70px
+    height: 70px
+    background-color: #e2de0c
+    box-shadow: 0 0 12px yellow
+    border-radius: 50%
+
+.ground
+    position: relative
+    height: 40vh
+    background-color: rgb(56, 37, 15)
+
+.grass
+    position: absolute
+    height: 200px
+    width: 100%
+    background-color: #307a06
+
+.road
+    position: absolute
+    height: 140px
+    width: 100%
+    top: 15px
+    background-color: #837d7d
+ 
+.car-first
+    @include car
+    top: -7px
+    left: 50px
+    background-color: #ca2020
+
+.car-second
+    @include car
+    background-color: #f7f2f254
+    right: 195px
+    bottom: 20px
+
+.car-first::before, .car-first::after, .car-second::before, .car-second::after
+    content: ''
+    position: absolute
+    bottom: 0
+    width: 30px
+    height: 35px
+
+.car-first::before
+    left: -30px
+    background-color: #ca2020
+    border-top-left-radius: 10px
+
+.car-first::after
+    right: -30px
+    background-color: #ca2020
+    border-top-right-radius: 10px
+
+.car-second::before
+    left: -30px
+    background-color: #f7f2f254
+    border-top-left-radius: 10px
+
+.car-second::after
+    right: -30px
+    background-color: #f7f2f254
+    border-top-right-radius: 10px
+
+.front-wheel 
+    @include wheel
+
+.rear-wheel
+    @include wheel
+    right: 0
+
+@mixin window
+    position: absolute
+    width: 40px
+    height: 24px
+    top: 5px
+    background-color: royalblue
+
+.front-window
+    @include window
+    border-top-left-radius: 15px
+
+.rear-window
+    @include window
+    right: 0
+    border-top-right-radius: 15px
+    

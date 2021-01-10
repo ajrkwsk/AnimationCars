@@ -21,25 +21,27 @@
 
 @mixin window
     position: absolute
+    top: 5px
     width: 40px
     height: 24px
-    top: 5px
     background-color: #92c9c9
 
 .sky 
     position: relative
     height: 60vh
     background-color: #1294eb
+    animation: sky 5s ease-out
 
 .sun
     position: absolute
-    bottom: 15px
-    left: 90px
     width: 70px
     height: 70px
+    bottom: -100px
+    left: 90px
     background-color: #e2de0c
     box-shadow: 0 0 12px yellow
     border-radius: 50%
+    animation: sun 5s ease-out
 
 .ground
     position: relative
@@ -54,29 +56,31 @@
 
 .road
     position: absolute
+    top: 15px
     height: 140px
     width: 100%
-    top: 15px
-    background-color: #837d7d
+    background-color: #7f7d83
  
 .car-first
     @include car
     top: -7px
     left: 50px
     background-color: #ca2020
+    animation: car-first 5s linear 
 
 .car-second
     @include car
-    background-color: #f7f2f254
-    right: 195px
+    right: -195px
     bottom: 20px
+    background-color: #f7f2f254
+    animation: car-second 5s linear 
 
 .car-first::before, .car-first::after, .car-second::before, .car-second::after
     content: ''
     position: absolute
-    bottom: 0
     width: 30px
     height: 35px
+    bottom: 0
 
 .car-first::before
     left: -30px
@@ -100,17 +104,12 @@
 
 .front-wheel 
     @include wheel
+    animation: wheel 5s linear
 
 .rear-wheel
     @include wheel
     right: 0
-
-@mixin window
-    position: absolute
-    width: 40px
-    height: 24px
-    top: 5px
-    background-color: royalblue
+    animation: wheel 5s linear
 
 .front-window
     @include window
@@ -120,4 +119,43 @@
     @include window
     right: 0
     border-top-right-radius: 15px
-    
+
+@keyframes car-first
+    from
+        left: 50px
+    to 
+        left: 1300px
+        
+@keyframes car-second
+    from
+        right: 195px
+    to 
+        right: 1300px
+
+@keyframes wheel
+    20%
+        transform: rotate(50deg)
+    95%
+        transform: rotate(360deg)
+
+@keyframes sun
+    0%
+        bottom: -50px
+    40%
+        bottom: 350px
+    60%
+        bottom: 350px
+        background-color: orange
+    100%
+        bottom: -50px
+        background-color: orange
+
+@keyframes sky
+    10%
+        background-color: #1294eb
+    60%
+        background-color: #1294eb
+    70%
+        background-color: #094369
+    100%
+        background-color: #02121f
